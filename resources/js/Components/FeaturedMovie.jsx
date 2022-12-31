@@ -1,5 +1,5 @@
-import PropType from 'prop-types';
-
+import { Link } from "@inertiajs/inertia-react";
+import PropType from "prop-types";
 
 FeaturedMovie.propTypes = {
     slug: PropType.string.isRequired,
@@ -7,8 +7,7 @@ FeaturedMovie.propTypes = {
     category: PropType.string.isRequired,
     thumbnail: PropType.string.isRequired,
     rating: PropType.number,
-
-}
+};
 
 export default function FeaturedMovie({
     slug,
@@ -26,11 +25,11 @@ export default function FeaturedMovie({
                 alt=""
             />
             {/* <!-- rating --> */}
-            <div className="rating absolute top-0 left-0">
+            <div className="absolute top-0 left-0 rating">
                 <div className="p-[30px] flex items-center gap-1">
                     <img src="/icons/ic_star.svg" alt="" />
-                    <span className="text-sm font-medium text-white mt-1">
-                       {rating.toFixed(1)}/5.0
+                    <span className="mt-1 text-sm font-medium text-white">
+                        {rating.toFixed(1)}/5.0
                     </span>
                 </div>
             </div>
@@ -43,15 +42,19 @@ export default function FeaturedMovie({
                     <div className="font-medium text-[22px] text-white">
                         {name}
                     </div>
-                    <p className="mb-0 text-white text-sm font-light">
-                       {category}
+                    <p className="mb-0 text-sm font-light text-white">
+                        {category}
                     </p>
                 </div>
                 <div className="translate-x-[100px] group-hover:translate-x-0 transition ease-in-out duration-500">
                     <img src="/icons/ic_play.svg" width="50" alt="" />
                 </div>
             </div>
-            <a href={slug} className="inset-0 absolute z-50"></a>
+
+            <Link
+                href={route("prototype.movie.show", slug)}
+                className="absolute inset-0 z-50"
+            ></Link>
         </div>
     );
 }

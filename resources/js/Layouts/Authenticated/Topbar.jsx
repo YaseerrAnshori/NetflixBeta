@@ -1,9 +1,10 @@
 
+import { Link } from "@inertiajs/inertia-react";
 import { useRef, useState } from "react";
 
 
 
-export default function Topbar() {
+export default function Topbar({name}) {
 
     const [dropdownOpen, setdropdownOpen] = useState(true)
     const dropdownTarget = useRef();
@@ -19,24 +20,24 @@ export default function Topbar() {
 
     return (
         <>
-            <div className="flex justify-between items-center cursor-pointer">
+            <div className="flex items-center justify-between cursor-pointer">
                 <input
                     type="text"
                     className="top-search"
                     placeholder="Search movie, cast, genre"
                 />
                 <div className="flex items-center gap-4">
-                    <span className="text-black text-sm font-medium">
-                        Welcome, Granola Sky
+                    <span className="text-sm font-medium text-black">
+                        Welcome, {name}
                     </span>
-                    <div className="collapsible-dropdown flex flex-col gap-2 relative">
+                    <div className="relative flex flex-col gap-2 collapsible-dropdown">
                         <div
                             className="outline outline-2 outline-gray-2 p-[5px] rounded-full w-[60px] dropdown-button"
                             onClick={triggerDropdown}
                         >
                             <img
                                 src="/images/avatar.png"
-                                className="rounded-full object-cover w-full"
+                                className="object-cover w-full rounded-full"
                                 alt=""
                             />
                         </div>
@@ -46,22 +47,23 @@ export default function Topbar() {
                         >
                             <a
                                 href="#!"
-                                className="transition-all hover:bg-sky-100 p-4"
+                                className="p-4 transition-all hover:bg-sky-100"
                             >
                                 Dashboard
                             </a>
                             <a
                                 href="#!"
-                                className="transition-all hover:bg-sky-100 p-4"
+                                className="p-4 transition-all hover:bg-sky-100"
                             >
                                 Settings
                             </a>
-                            <a
-                                href="sign_in.html"
-                                className="transition-all hover:bg-sky-100 p-4"
+                            <Link
+                                href={route('logout')}
+                                method="post"
+                                className="p-4 transition-all hover:bg-sky-100"
                             >
                                 Sign Out
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

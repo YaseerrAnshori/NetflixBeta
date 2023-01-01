@@ -65,6 +65,7 @@ export default function Login() {
                                         placeholder="Email Address"
                                         isFocused={true}
                                         handleChange={onHandleChange}
+                                        required
                                     />
                                     <InputError message={errors.email} className="mt-2" />
 

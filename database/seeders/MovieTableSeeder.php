@@ -22,7 +22,7 @@ class MovieTableSeeder extends Seeder
                 'category' => 'Action & Relations',
                 'video_url' => 'https://youtu.be/gDkrQp-zQCU',
                 'thumbnail' => 'https://placeimg.com/640/480/any',
-                'rating' => 9.6,
+                'rating' => 4.3,
                 'is_featured' => 1,
             ],
             [
@@ -31,7 +31,7 @@ class MovieTableSeeder extends Seeder
                 'category' => 'Love & Funny',
                 'video_url' => 'https://youtu.be/gDkrQp-zQCU',
                 'thumbnail' => 'https://placeimg.com/640/480/animals',
-                'rating' => 9.2,
+                'rating' => 4.2,
                 'is_featured' => 0,
 
             ],
@@ -41,7 +41,7 @@ class MovieTableSeeder extends Seeder
                 'category' => 'Love & Funny',
                 'video_url' => 'https://youtu.be/gDkrQp-zQCU',
                 'thumbnail' => 'https://placeimg.com/640/480/animals',
-                'rating' => 5.2,
+                'rating' => 4.2,
                 'is_featured' => 0,
             ],
         ];

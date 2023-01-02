@@ -17,7 +17,7 @@ export default function Show(){
 
             {/* <!-- Button back to dashboard --> */}
             <div className="absolute z-20 top-5 left-5">
-                <Link href={route('prototype.dashboard')}>
+                <Link href={route('dashboard')}>
                     <img src="/icons/ic_arrow-left.svg" className="transition-all btn-back w-[46px]" alt="stream" />
                 </Link>
             </div>

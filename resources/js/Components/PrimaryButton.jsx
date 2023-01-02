@@ -19,7 +19,7 @@ PrimaryButton.propTypes = {
 export default function PrimaryButton({
     type = "submit",
     className,
-    variant ,
+    variant = "primary",
     processing,
     children,
     onClick,
